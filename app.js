@@ -5,7 +5,7 @@ const app = express();
 
 const rootDir = require('./utils/path');
 
-const adminRoute = require('./routes/admin');
+const adminData = require('./routes/admin');
 const shopRoute = require('./routes/shop');
 
 // app.use((req, res, next)=>{
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // controller /admin
-app.use('/admin',adminRoute);
+app.use('/admin',adminData.routes);
 app.use(shopRoute);
 
 //return 404 status
