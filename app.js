@@ -5,6 +5,10 @@ const app = express();
 
 const rootDir = require('./utils/path');
 
+app.set('view engine', 'pug');
+app.set('views', 'views');
+
+
 const adminData = require('./routes/admin');
 const shopRoute = require('./routes/shop');
 
@@ -23,7 +27,7 @@ app.use(shopRoute);
 
 //return 404 status
 app.use('/', (req, res, next) => {
-    res.status(404).sendFile(path.join(rootDir, '/views', '404.html'));
+    res.status(404).render('404');
 });
 
 // server.listen(3000);

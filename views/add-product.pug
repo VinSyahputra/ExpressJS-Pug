@@ -1,0 +1,16 @@
+extends layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/main.css")
+
+     //- untuk class bisa menggunakan . atau menggunakan atribute seperti tag html biasa
+block content 
+    div.container
+        div(class="col-6 mx-auto")
+            form(action="/admin/add-product", method="POST")
+                div(class="form-group")
+                  label(for="title") Title
+                  input(type="text" class="form-control" id="title" name="title")
+    
+                button(type="submit" class="btn btn-primary") Submit
+            span(id="bg-aa") asdads

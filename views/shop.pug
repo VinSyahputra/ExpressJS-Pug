@@ -1,0 +1,19 @@
+extends layouts/main-layout.pug
+
+block content
+    div(class="container")
+            h1(class="text-center") This is a Shop page
+            br
+            if prods.length > 0
+                p(class="text-center bg-primary px-4 py-2 mb-0 d-block border rounded text-white") 
+                    b List Of Products
+                .d-flex.justify-content-start.flex-wrap.mt-3
+                    each product in prods
+                        div(class="card mx-2" style="width: 18rem;")
+                            img(src="https://picsum.photos/200" class="card-img-top" alt="...")
+                            div(class="card-body")
+                                h5(class="card-title") #{product.title}
+                                p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.
+
+            else
+                small Empty Product
